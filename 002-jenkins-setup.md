@@ -1,7 +1,8 @@
-# 2. Settingup Jenkins Job
+# 2. Setting up Jenkins Job
 
 ## 2.1 Overview
-In this lab, we will use Jenkins to create a build pipeline with maven that we will use in our HOL-OSS-DEVOPS project.
+In this lab, we will use Jenkins to create a build using maven to use it in our HOL-OSS-DEVOPS project.
+
 ### 2.1.1 Objectives
 This lab aims to get you familiar with Jenkins on Azure and OpenShift Clouds.
 
@@ -11,7 +12,7 @@ You must have the Azure account or an OpenShift account mentioned in Lab 01.
 ## 2.2 Setting up the Jenkins Machine
 ### 2.2.1 Using Azure
 
-1. Open Azure Portal
+1. Browse to Azure Portal
 You can use all the Jenkins templates showed below; for this lab we will use Jenkis template published by Docker.
 ![](./images/2.2.i001.png)
 
@@ -26,7 +27,7 @@ You can use all the Jenkins templates showed below; for this lab we will use Jen
 
 ![](./images/2.2.i005.png)
 
-5. Validate the machine
+5. Validate the configuration selected
 ![](./images/2.2.i006.png)
 
 6. Deploy the machine
