@@ -71,7 +71,7 @@ In order for VSTS to find the sample Java application that is used in this lab w
 
 ### 3.3.1 Fork GitHub repository
 
-1. Go to the [hol-oss-devops](https://github.com/karolikl/hol-oss-devops) repository on GitHub and make sure you are logged in with your GitHub user account.
+1. Go to the [hol-oss-devops](https://github.com/msdevno/hol-oss-devops) repository on GitHub and make sure you are logged in with your GitHub user account.
 
 2. Fork the repository 
 ![](./images/3.3.i001.PNG)
