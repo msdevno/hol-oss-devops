@@ -29,44 +29,44 @@ In this session, we will create a GitHub service endpoint that enables us to ret
 3. Click "Create project"
 
 4. Click "Navigate to project"
-![](./images/3.2.i002.png)
+![](./images/3.2.i002.PNG)
 
 ### 3.2.2 Connecting VSTS to GitHub
 
 We will now create a new service connection to GitHub so that VSTS will have access to our GitHub repository later on in this lab.
 
 1. Navigate to "Services" under "Settings"
-![](./images/3.2.i003.png)
+![](./images/3.2.i003.PNG)
 
 2. Create a new GitHub connection by clicking on "+ New Service Endpoint" and selecting "GitHub"
-![](./images/3.2.i004.png)
+![](./images/3.2.i004.PNG)
 
 3. Click on the "Authorize" button and follow the steps required by GitHub to authorize access to your account.
-![](./images/3.2.i005.png)
+![](./images/3.2.i005.PNG)
 
 4. When access is granted, you will see a message that confirms the connection and you can specify a connection name. Click OK.
-![](./images/3.2.i006.png)
+![](./images/3.2.i006.PNG)
 
 5. You should now see the service endpoint you just created in the overview:
-![](./images/3.2.i007.png)
+![](./images/3.2.i007.PNG)
 
 ### 3.2.3 Connecting VSTS to Jenkins
 
 We will now create a new service connection to Jenkins so that VSTS will have access to the Jenkins server created in the previous lab.
 
 2. Create a new Jenkins connection by clicking on "+ New Service Endpoint" and selecting "Jenkins"
-![](./images/3.2.i008.png) 
+![](./images/3.2.i008.PNG) 
 
 3. Specify a connection name and the Server URL, Username and Password of your Jenkins server (this was set in Lab 2.2.1)
-![](./images/3.2.i009.png)
+![](./images/3.2.i009.PNG)
 
 4. Click "Verify connection" to ensure that VSTS is able to connect to the Jenkins server.
 
 5. When the connection is verified, you will see a message that confirms the connection and you can click OK.
-![](./images/3.2.i010.png)
+![](./images/3.2.i010.PNG)
 
 6. You should now see the service endpoint you just created in the overview:
-![](./images/3.2.i011.png)
+![](./images/3.2.i011.PNG)
 
 ## 3.3. Building the application using VSTS
 
@@ -75,13 +75,13 @@ We will now create a new service connection to Jenkins so that VSTS will have ac
 We will now create a new *Build Definition* that contains all the steps to be executed when we trigger a build. We will enable [*Continous Integration*](https://en.wikipedia.org/wiki/Continuous_integration) so that a build is triggered every time you push code to the GitHub repository.
 
 1. Go to "Builds" under "Build & Release"
-![](./images/3.3.i003.png)
+![](./images/3.3.i003.PNG)
 
 2. Create a new build definition by clicking "+ New definition"
 
 3. Select the *Jenkins* template and click "Next"
-![](./images/3.3.i004.png)
+![](./images/3.3.i004.PNG)
 
 4. Select GitHub as the repository source and mark the "Continous Integration" checkbox. Keep all other settings as-is and click "Create".
-![](./images/3.3.i005.png)
+![](./images/3.3.i005.PNG)
 
