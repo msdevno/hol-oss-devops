@@ -95,6 +95,40 @@ We will now configure the release tasks for the Staging environment of our relea
 3. Select "All" in the menu to show all the tasks that are available. Find the task called "Docker" and click "Add" twice to add two Docker tasks. 
 ![](./images/5.5.i002.PNG)
 
-3. When you close the pop-up, your release definition should look like this: 
+4. When you close the pop-up, your release definition should look like this: 
 ![](./images/5.5.i003.PNG) 
+
+5. Select the first "Docker" task and edit it to match the following fields:
+
+    **Docker Registry Connection:** Select your Docker Registry endpoint  
+    **Action:** Run an image  
+    **Image Name:** tomcat:8.0  
+    **Container Name:** ossdevops-v$(Release.ReleaseId)-staging  
+    **Ports:** 8888:8080  
+    **Run in Background:** Checked  
+    
+    **Advanced options**  
+    **Docker Host Connection:** Select your Docker Host endpoint   
+    **Working Directory**: $(System.DefaultWorkingDirectory)  
+    ![](./images/5.5.i004.PNG)  
+
+    Note that we name our container using a variable: $(Release.ReleaseId). This is a built-in variable that will insert the ID of the release into the name of the container being created in this task.
+
+6. Select the second "Docker" task and edit it to match the following fields:
+
+    **Docker Registry Connection:** Select your Docker Registry endpoint  
+    **Action:** Run an image  
+    **Image Name:** tomcat:8.0  
+    **Container Name:** ossdevops-v$(Release.ReleaseId)-staging  
+    **Ports:** 8888:8080  
+    **Run in Background:** Checked  
+    
+    **Advanced options**  
+    **Docker Host Connection:** Select your Docker Host endpoint   
+    **Working Directory**: $(System.DefaultWorkingDirectory)  
+    ![](./images/5.5.i004.PNG)  
+
+    Note that we name our container using a variable: $(Release.ReleaseId). This is a built-in variable that will insert the ID of the release into the name of the container being created in this task.
+
+
 
