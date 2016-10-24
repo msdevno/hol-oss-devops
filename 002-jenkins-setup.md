@@ -63,7 +63,6 @@ Now we can fill the Administratior password and continue to the next step.
 ![](./images/2.2.i022.png)
 ![](./images/2.2.i023.png)
 
-
 11. Create a new Item and select an FreeStyle Project
 ![](./images/2.2.i024.png)
 ![](./images/2.2.i025.png)
