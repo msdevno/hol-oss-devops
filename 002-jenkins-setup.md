@@ -79,7 +79,6 @@ Now we can fill the Administratior password and continue to the next step.
 13. Maven Configuration
 
 Go to the main page and select Manage Jenkins as is showing below.
-
 ![](./images/2.2.i031.png)
 
 Select Global Tool Configuration and create a Maven installation.

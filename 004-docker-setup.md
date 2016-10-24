@@ -76,4 +76,3 @@ Fill all the fields
 
 3. When the rule has been deployed you will see it as is showing below
 ![](./images/4.2.i016.png)
-
