@@ -144,3 +144,19 @@ We will now configure the release tasks for the Staging environment of our relea
 
 11. Go to the "Trigger" tab of your release definition and update the "Set trigger on artifact source" to point to the artifact source called "ArtifactSource".
     ![](./images/5.5.i009.PNG)
+
+12. Save your release definition again.
+
+## 5.6 Create your first release
+
+1. Create a new release by clicking "+ Release" and selecting "Create Release".
+    ![](./images/5.6.i001.PNG) 
+
+2. Select your last successful build and click "Create": 
+    ![](./images/5.6.i002.PNG) 
+
+3. A new release has now been created and you can click the link to navigate to the release: 
+    ![](./images/5.6.i003.PNG)
+
+4. Click on the "Logs" tab of the release to see the details of your deployment and verify that the release was successful.
+    ![](./images/5.6.i004.PNG)
