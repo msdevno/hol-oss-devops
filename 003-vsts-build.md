@@ -75,13 +75,13 @@ We will now create a new service connection to Jenkins so that VSTS will have ac
 We will now create a new *Build Definition* that contains all the steps to be executed when we trigger a build. We will enable [*Continous Integration*](https://en.wikipedia.org/wiki/Continuous_integration) so that a build is triggered every time you push code to the GitHub repository.
 
 1. Go to "Builds" under "Build & Release"
-![](./images/3.3.i003.PNG)
+![](./images/3.3.i001.PNG)
 
 2. Create a new build definition by clicking "+ New definition"
 
 3. Select the *Jenkins* template and click "Next"
-![](./images/3.3.i004.PNG)
+![](./images/3.3.i002.PNG)
 
 4. Select GitHub as the repository source and mark the "Continous Integration" checkbox. Keep all other settings as-is and click "Create".
-![](./images/3.3.i005.PNG)
+![](./images/3.3.i003.PNG)
 
