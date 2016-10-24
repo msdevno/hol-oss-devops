@@ -24,7 +24,7 @@ In this session, we will create a GitHub service endpoint that enables us to ret
     **Process template:** Agile
 
     **Version control:** Git (It doesn't really matter what you select here as we will retrieve our code from GitHub)
-![](./images/3.2.i001.png)
+![](./images/3.2.i001.PNG)
 
 3. Click "Create project"
 
