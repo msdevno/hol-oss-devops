@@ -68,23 +68,30 @@ We will now create a new service connection to Jenkins so that VSTS will have ac
 6. You should now see the service endpoint you just created in the overview:
 ![](./images/3.2.i011.PNG)
 
-## 3.3. Building the application using VSTS
+## 3.3. Sample Java application on GitHub
 
-### 3.3.1 Creating a build definition
+In order for VSTS to find the sample Java application that is used in this lab when it connects to your GitHub account, you will need to fork the repository that contains the application.
+
+### 3.3.1 Fork this GitHub repository
+
+## 3.4. Building the application using VSTS
+
+### 3.4.1 Creating a build definition
 
 We will now create a new *Build Definition* that contains all the steps to be executed when we trigger a build. We will enable [*Continous Integration*](https://en.wikipedia.org/wiki/Continuous_integration) so that a build is triggered every time you push code to the selected branch in your GitHub repository.
 
 1. Go to "Builds" under "Build & Release"
-![](./images/3.3.i001.PNG)
+![](./images/3.4.i001.PNG)
 
 2. Create a new build definition by clicking "+ New definition"
 
 3. Select the "Jenkins" template and click "Next"
-![](./images/3.3.i002.PNG)
+![](./images/3.4.i002.PNG)
 
 4. Select GitHub as the repository source and mark the "Continous Integration" checkbox. Keep all other settings as-is and click "Create".
-![](./images/3.3.i003.PNG)
+![](./images/3.4.i003.PNG)
 
 5. You should now see a default build definition. We will fill out all necessary information in the following steps of the lab.
-![](./images/3.3.i004.PNG) 
+![](./images/3.4.i004.PNG) 
 
+6. Go to the "Repository" tab 
