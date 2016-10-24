@@ -1,4 +1,4 @@
-# 3. Before you begin this lab
+# 1. Before you begin this lab
 
 Before you begin this hands on lab, there are a couple of things you need to make sure you have: 
 
