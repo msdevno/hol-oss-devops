@@ -17,12 +17,9 @@ In this session, we will create a GitHub service endpoint that enables us to ret
 
 2. Click "New" to create a new Team project, and specify following information. 
 
-    **Name:** OSSDevOpsHOL
-    
-    **Description:** Introduction to open source DevOps practices in the cloud. Hands on labs to show how Visual Studio Team Services integrates with GitHub, Jenkins and Docker. 
-
-    **Process template:** Agile
-
+    **Name:** OSSDevOpsHOL  
+    **Description:** Introduction to open source DevOps practices in the cloud. Hands on labs to show how Visual Studio Team Services integrates with GitHub, Jenkins and Docker.  
+    **Process template:** Agile  
     **Version control:** Git (It doesn't really matter what you select here as we will retrieve our code from GitHub)
 ![](./images/3.2.i001.PNG)
 
@@ -99,4 +96,45 @@ We will now create a new *Build Definition* that contains all the steps to be ex
 5. You should now see a default build definition. We will fill out all necessary information in the following steps of the lab.
 ![](./images/3.4.i004.PNG) 
 
-6. Go to the "Repository" tab 
+6. Go to the "Repository" tab and specify the following information. 
+
+    **Repository type:** GitHub  
+    **Connection:** Select the GitHub endpoint you created earlier in this lab  
+    **Repository:** Select the forked repository of this lab
+    **Default branch:** master
+
+    ![](./images/3.4.i005.PNG) 
+
+6. Go to the "Build" tab, select the "Queue Jenkins Job" build step and fill out the following:
+
+    **Jenkins service endpoint:** Select the Jenkins endpoint you created earlier in this lab  
+    **Job name:** MavenBuild  
+
+    ![](./images/3.4.i006.PNG) 
+
+7. Select the "Download artifacts produced by" build step and fill out the following:
+
+    **Jenkins service endpoint:** Select the Jenkins endpoint you created earlier in this lab  
+    **Job name:** MavenBuild  
+
+    ![](./images/3.4.i007.PNG) 
+
+8. Click "Save", supply the name "Queue Jenkins Job & Publish" and click OK.
+
+    ![](./images/3.4.i008.PNG) 
+
+9. Queue a new build by selecting "Queue new build" and click OK without changing any of the default settings.
+
+    ![](./images/3.4.i009.PNG) 
+
+10. Let the build run and ensure that it is successful. 
+
+    ![](./images/3.4.i010.PNG) 
+
+11. To view the build summary, click the build number and select "Summary"
+
+    ![](./images/3.4.i011.PNG)
+
+11. To view the artifacts that were downloaded from Jenkins, click the "Artifacts" tab. When you explore the artifact from the build you will see that it contains a .war file.
+
+    ![](./images/3.4.i012.PNG) 
