@@ -74,6 +74,11 @@ In order for VSTS to find the sample Java application that is used in this lab w
 
 ### 3.3.1 Fork this GitHub repository
 
+1. Go to the [hol-oss-devops](https://github.com/karolikl/hol-oss-devops) repository on GitHub and make sure you are logged in with your GitHub user account.
+
+2. Fork the repository 
+![](./images/3.3.i001.PNG)
+
 ## 3.4. Building the application using VSTS
 
 ### 3.4.1 Creating a build definition
@@ -81,7 +86,7 @@ In order for VSTS to find the sample Java application that is used in this lab w
 We will now create a new *Build Definition* that contains all the steps to be executed when we trigger a build. We will enable [*Continous Integration*](https://en.wikipedia.org/wiki/Continuous_integration) so that a build is triggered every time you push code to the selected branch in your GitHub repository.
 
 1. Go to "Builds" under "Build & Release"
-![](./images/3.4.i001.PNG)
+![](./images/3.4.i001.PNG) 
 
 2. Create a new build definition by clicking "+ New definition"
 
