@@ -51,25 +51,25 @@ We will now create a new service connection to GitHub so that VSTS will have acc
 
 We will now create a new service connection to Jenkins so that VSTS will have access to the Jenkins server created in the previous lab.
 
-2. Create a new Jenkins connection by clicking on "+ New Service Endpoint" and selecting "Jenkins"
+1. Create a new Jenkins connection by clicking on "+ New Service Endpoint" and selecting "Jenkins"
 ![](./images/3.2.i008.PNG) 
 
-3. Specify a connection name and the Server URL, Username and Password of your Jenkins server (this was set in Lab 2.2.1)
+2. Specify a connection name and the Server URL, Username and Password of your Jenkins server (this was set in Lab 2.2.1)
 ![](./images/3.2.i009.PNG)
 
-4. Click "Verify connection" to ensure that VSTS is able to connect to the Jenkins server.
+3. Click "Verify connection" to ensure that VSTS is able to connect to the Jenkins server.
 
-5. When the connection is verified, you will see a message that confirms the connection and you can click OK.
+4. When the connection is verified, you will see a message that confirms the connection and you can click OK.
 ![](./images/3.2.i010.PNG)
 
-6. You should now see the service endpoint you just created in the overview:
+5. You should now see the service endpoint you just created in the overview:
 ![](./images/3.2.i011.PNG)
 
 ## 3.3. Sample Java application on GitHub
 
 In order for VSTS to find the sample Java application that is used in this lab when it connects to your GitHub account, you will need to fork the repository that contains the application.
 
-### 3.3.1 Fork this GitHub repository
+### 3.3.1 Fork GitHub repository
 
 1. Go to the [hol-oss-devops](https://github.com/karolikl/hol-oss-devops) repository on GitHub and make sure you are logged in with your GitHub user account.
 
@@ -123,18 +123,20 @@ We will now create a new *Build Definition* that contains all the steps to be ex
 
     ![](./images/3.4.i008.PNG) 
 
-9. Queue a new build by selecting "Queue new build" and click OK without changing any of the default settings.
+### 3.4.2 Queue your first build
+
+1. Queue a new build by selecting "Queue new build" and click OK without changing any of the default settings.
 
     ![](./images/3.4.i009.PNG) 
 
-10. Let the build run and ensure that it is successful. 
+2. Let the build run and ensure that it is successful. 
 
     ![](./images/3.4.i010.PNG) 
 
-11. To view the build summary, click the build number and select "Summary"
+3. To view the build summary, click the build number and select "Summary"
 
     ![](./images/3.4.i011.PNG)
 
-11. To view the artifacts that were downloaded from Jenkins, click the "Artifacts" tab. When you explore the artifact from the build you will see that it contains a .war file.
+4. To view the artifacts that were downloaded from Jenkins, click the "Artifacts" tab. When you explore the artifact from the build you will see that it contains a .war file.
 
     ![](./images/3.4.i012.PNG) 
