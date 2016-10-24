@@ -76,5 +76,11 @@ Fill all the fields
 3. When the rule has been deployed you will see it as is showing below
 ![](./images/4.2.i016.png)
 
-4. Verifying the connection
+4. Verify the Docker environment variables
+    export DOCKER_HOST=tcp://yourhost:2376
+    export DOCKER_TLS_VERIFY=1
+    export DOCKER_CERT_PATH=/yourpath/.docker/
+
+5. Verifying the connection
 ![](./images/4.2.i018.png)
+
