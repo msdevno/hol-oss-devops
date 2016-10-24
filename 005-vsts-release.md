@@ -83,7 +83,7 @@ We will now create a new *Release Definition* that contains all the steps to be 
 
 2. Install the extension by clicking "Install" and selecting the account you want to install the extension for. 
 
-## 5.5 Configure release steps
+## 5.5 Configure release tasks
 
 We will now configure the release tasks for the Staging environment of our release definition.
 
