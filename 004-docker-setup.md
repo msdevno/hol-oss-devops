@@ -71,8 +71,10 @@ Make sure to use your own IPs
 1. Browse to Azure portal and open the Docker machine created in step 4.2 in this Lab.
 2. Go to Network interfaces -> Network security group -> Inbound security rules -> Add
 Fill all the fields
-
 ![](./images/4.2.i015.png)
 
 3. When the rule has been deployed you will see it as is showing below
 ![](./images/4.2.i016.png)
+
+4. Verifying the connection
+![](./images/4.2.i018.png)
