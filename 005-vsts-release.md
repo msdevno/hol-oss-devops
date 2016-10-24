@@ -117,18 +117,30 @@ We will now configure the release tasks for the Staging environment of our relea
 6. Select the second "Docker" task and edit it to match the following fields:
 
     **Docker Registry Connection:** Select your Docker Registry endpoint  
-    **Action:** Run an image  
-    **Image Name:** tomcat:8.0  
-    **Container Name:** ossdevops-v$(Release.ReleaseId)-staging  
-    **Ports:** 8888:8080  
-    **Run in Background:** Checked  
+    **Action:** Run a Docker command  
+    **Command:**   
+    
+    ```
+    cp $(System.DefaultWorkingDirectory)/ArtifactSource/drop/sample-app/target/OSSDevOpsHOL.war ossdevops-v$(Release.ReleaseId)-test:/usr/local/tomcat/webapps/OSSDevOpsHOL.war
+    ```  
     
     **Advanced options**  
     **Docker Host Connection:** Select your Docker Host endpoint   
     **Working Directory**: $(System.DefaultWorkingDirectory)  
-    ![](./images/5.5.i004.PNG)  
+    ![](./images/5.5.i005.PNG)  
 
-    Note that we name our container using a variable: $(Release.ReleaseId). This is a built-in variable that will insert the ID of the release into the name of the container being created in this task.
+    The command above copies the .war file contained in our artifact to the newly created container running on our Docker Host.
 
+7. If you haven't done so already, save your release definition.
 
+8. In the command in step 6, you can see that the path contains "ArtifactSource". This refers to the source of our artifact, which default is the name of our build. As we want our source to be called "ArtifactSource", we need to specify this. Go to the "Artifacts" tab of your release definition: 
+    ![](./images/5.5.i006.PNG)  
 
+9. As you can see there, the "Source alias" is currently "Queue Jenkins Job & Publish", which is a painful name to include in a path. Click the three dots next to the alias and select Edit:
+    ![](./images/5.5.i007.PNG)  
+
+10. Rename the value of "Source Alias" to "ArtifactSource" so that it matches we value we specified in our path in step 6. Click "Save".
+    ![](./images/5.5.i008.PNG)  
+
+11. Go to the "Trigger" tab of your release definition and update the "Set trigger on artifact source" to point to the artifact source called "ArtifactSource".
+    ![](./images/5.5.i009.PNG)
