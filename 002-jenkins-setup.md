@@ -68,9 +68,9 @@ Now we can fill the Administratior password and continue to the next step.
 ![](./images/2.2.i025.png)
 
 12. Fill all the form and save it
-![](./images/2.2.i026.png)
-![](./images/2.2.i027.png)
-![](./images/2.2.i028.png)
+![](./images/2.2.i026.PNG)
+![](./images/2.2.i027.PNG)
+![](./images/2.2.i028.PNG)
 ![](./images/2.2.i029.png)
 ![](./images/2.2.i030.png)
 ![](./images/2.2.i031.png)
