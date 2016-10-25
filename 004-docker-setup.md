@@ -11,16 +11,16 @@ You must to have the Azure account mentioned in Lab 01.
 1. Browse to Azure Portal
 
 2. Create a new Linux Machine and fill all the requeriments
-![](./images/4.2.i001.PNG)
+![](./images/4.2.i001.png)
 
 3. Select the machine size
-![](./images/4.2.i002.PNG)
+![](./images/4.2.i002.png)
 
 3. Fill all the settings
-![](./images/4.2.i003.PNG)
+![](./images/4.2.i003.png)
 
 4. Validate the configuration selected
-![](./images/4.2.i004.PNG)
+![](./images/4.2.i004.png)
 
 6. Deploy the machine
 ![](./images/4.2.i005.PNG)
