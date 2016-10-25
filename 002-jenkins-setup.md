@@ -92,7 +92,6 @@ You must have the Azure account mentioned in Lab 01.
 ![](./images/2.2.i028.PNG)
 ![](./images/2.2.i029.PNG)
 ![](./images/2.2.i030.PNG)
-![](./images/2.2.i031.PNG)
 
 13. Maven Configuration
 
