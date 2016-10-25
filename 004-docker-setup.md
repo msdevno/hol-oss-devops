@@ -46,8 +46,7 @@ You must to have the Azure account mentioned in Lab 01.
 6. Create a CSR "openssl req -subj "/CN=$HOST" -sha256 -new -key server-key.pem -out server.csr" **Do no forget specify your HOST** 
 ![](./images/4.2.i009e.PNG)
 
-7. Allow connections using IPs "$ echo subjectAltName = IP:10.10.10.20,IP:127.0.0.1 > extfile.cnf
-" **Make sure to use your own IPs**
+7. Allow connections using IPs "$ echo subjectAltName = IP:10.10.10.20,IP:127.0.0.1 > extfile.cnf" **Make sure to use your own IPs**
 ![](./images/4.2.i009f.PNG)
 
 8. Sign the public key "openssl x509 -req -days 365 -sha256 -in server.csr -CA ca.pem -CAkey ca-key.pem \ -CAcreateserial -out server-cert.pem -extfile extfile.cnf"
