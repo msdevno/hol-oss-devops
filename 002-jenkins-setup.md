@@ -88,7 +88,7 @@ Select Global Tool Configuration and create a Maven installation.
 
 ![](./images/2.2.i034.PNG)
 
-After the maven installation you should configure the Maven Option Variables.
+After maven installation you should configure the Maven Option Variables.
 Go to Configure System and Select Maven Project Configuration.
 
 ![](./images/2.2.i035.PNG)
