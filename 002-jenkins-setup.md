@@ -4,10 +4,10 @@
 In this lab, we will use Jenkins to create a build using maven to use it in our HOL-OSS-DEVOPS project.
 
 ### 2.1.1 Objectives
-This lab aims to get you familiar with Jenkins on Azure and OpenShift Clouds.
+This lab aims to get you familiar with Jenkins on Azure Cloud.
 
 ### 2.1.2 Requerimients
-You must have the Azure account or an OpenShift account mentioned in Lab 01.
+You must have the Azure account mentioned in Lab 01.
 
 ## 2.2 Setting up the Jenkins Machine
 ### 2.2.1 Using Azure
