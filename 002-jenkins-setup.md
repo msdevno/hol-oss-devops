@@ -71,27 +71,27 @@ Now we can fill the Administratior password and continue to the next step.
 ![](./images/2.2.i026.PNG)
 ![](./images/2.2.i027.PNG)
 ![](./images/2.2.i028.PNG)
-![](./images/2.2.i029.png)
-![](./images/2.2.i030.png)
-![](./images/2.2.i031.png)
+![](./images/2.2.i029.PNG)
+![](./images/2.2.i030.PNG)
+![](./images/2.2.i031.PNG)
 
 13. Maven Configuration
 
 Go to the main page and select Manage Jenkins as is showing below.
-![](./images/2.2.i031.png)
+![](./images/2.2.i031.PNG)
 
 Select Global Tool Configuration and create a Maven installation.
 
-![](./images/2.2.i032.png)
+![](./images/2.2.i032.PNG)
 
-![](./images/2.2.i033.png)
+![](./images/2.2.i033.PNG)
 
-![](./images/2.2.i034.png)
+![](./images/2.2.i034.PNG)
 
 After the maven installation you should configure the Maven Option Variables.
 Go to Configure System and Select Maven Project Configuration.
 
-![](./images/2.2.i035.png)
+![](./images/2.2.i035.PNG)
 
-![](./images/2.2.i036.png)
+![](./images/2.2.i036.PNG)
 
