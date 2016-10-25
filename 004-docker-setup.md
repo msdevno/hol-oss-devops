@@ -4,7 +4,7 @@
 In this lab we will configure a Docker machine to use it in our HOL-DEVOPS project.
 
 ### 4.1.1 Requerimients
-You must to have the Azure account mentioned in Lab 01.
+All the requerimients listed in Lab 1.
 
 ## 4.2 Setting up the Linux Machine in Azure
 
@@ -110,3 +110,61 @@ Fill all the fields
 5. Verifying the connection
 ![](./images/4.2.i018.PNG)
 
+## 4.5 Install .NET Core SDK for Linux
+
+In order to run the VSTS Agent we need to make sure that .NET Core is installed in our Linux machine.
+
+1. Add dotnet apt-get feed 
+
+   **sudo sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet-release/ trusty main" > /etc/apt/sources.list.d/dotnetdev.list'**
+
+   **sudo apt-key adv --keyserver apt-mo.trafficmanager.net --recv-keys 417A0893**
+![](./images/4.5.i004.PNG)
+
+   **sudo apt-get update**
+![](./images/4.5.i005.PNG)
+
+2. Install .NET Core SDK
+
+   **sudo apt-get install dotnet-dev-1.0.0-preview2-003131**
+   ![](./images/4.5.i006.PNG)
+
+
+## 4.6 Install VSTS Linux Agent
+1. Browse to VSTS-> Agent queues -> Download agent
+![](./images/4.5.i001.PNG)
+
+2. Browse to Get agent -> Linux -> your OS. For this Lab we will use **Ubuntu14.04-x64**
+![](./images/4.5.i002.PNG)
+
+3. Dowload the agent and transfer to your Linux machine
+
+4. Create the agent 
+
+   ***$ mkdir myagent***
+
+   ***$ cd myagent***
+
+   ***$ tar zxvf /home/jessica/vsts-agent-ubuntu.14.04-x64-2.108.0.tar.gz***
+    ![](./images/4.5.i003.PNG)
+
+5. Configure the agent.
+   
+   Respond to the prompts:
+
+   **Server URL: https://{your-account}.visualstudio.com**
+
+   **Authentication type: Choose PAT, and then paste the PAT token you created in Lab1.**
+
+    ![](./images/4.5.i007.PNG) 
+
+   **Enter the agent pool(press Enter for default) > "your agent pool"**
+
+   **Enter the agent name(press Enter for "your host name") > "your agent name"**
+    ![](./images/4.5.i009.PNG)
+
+## 4.6 Create a directory for warfiles
+
+During the release (**see Lab5**)  you will uploaded the war file to a directory in the Docker machine. In this section we just create a directory and named warfiles as is showing below.
+
+![](./images/4.5.i010.PNG)
