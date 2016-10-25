@@ -13,19 +13,20 @@ You must have the Azure account or an OpenShift account mentioned in Lab 01.
 ### 2.2.1 Using Azure
 
 1. Browse to Azure Portal
-You can use all the Jenkins templates showed below; for this lab we will use Jenkis template published by Docker.
-![](./images/2.2.i001.png)
+
+   You can use all the Jenkins templates showed below; for this lab we will use Jenkis template published by Docker.
+   ![](./images/2.2.i001.png)
 
 2. Create a Jenkins Machine
 ![](./images/2.2.i002.png)
 
-3. Fill all the requerimients
+3. Fill all the fields
 ![](./images/2.2.i003.png)
 
 4. Select the machine size
 ![](./images/2.2.i004.png) 
 
-![](./images/2.2.i005.png)
+   ![](./images/2.2.i005.png)
 
 5. Validate the configuration selected
 ![](./images/2.2.i006.png)
@@ -34,40 +35,58 @@ You can use all the Jenkins templates showed below; for this lab we will use Jen
 ![](./images/2.2.i008.png)
 
 7. Login in your Jenkins server with the defult credentials.
+   
+   After the machine is deployed. When you login for the first time to jenkins it will ask for unlock
+   ![](./images/2.2.i009.png)
 
-When you login for the first time to jenkins it will ask for unlock
-![](./images/2.2.i009.png)
+   To unlock Jenkins you should connect directly to the machine created in step 6 and look in the "initialAdminPassword" file. We will use Putty to look in this file as is showing below.
+   
+   Connecting to the machine
+   ![](./images/2.2.i010.png)
 
-To unlock Jenkins you should connect directly to the vm and look in the "initialAdminPassword" file. We will use Putty to look in this file as is showing below.
-![](./images/2.2.i010.png)
-![](./images/2.2.i011.png)
-![](./images/2.2.i012.png)
-![](./images/2.2.i013.png)
-![](./images/2.2.i014.png)
+   ![](./images/2.2.i011.png)
+   
+   Providing user and password. **You defined this values in step 3**
+   ![](./images/2.2.i012.png)
 
-Once that we find the file. Please notice the path.
-![](./images/2.2.i015.png)
+   ![](./images/2.2.i013.png)
 
-Now we can fill the Administratior password and continue to the next step.
-![](./images/2.2.i016.png)
+   ![](./images/2.2.i014.png)
 
-8. Create a new Jenkins user 
-![](./images/2.2.i019.png)
-![](./images/2.2.i020.png)
+   Once we find the file. **Please notice the path.**
+  ![](./images/2.2.i015.png)
 
-9. Customize Jenkins selecting "Install suggested plugins"
+   Now we can provide the Administratior password and continue to the next step.
+  ![](./images/2.2.i016.png)
+
+8. Create a new Jenkins user
+
+   After unlock Jenkins you will see the next webpage
+
+   ![](./images/2.2.i019.png)
+
+   Once that you create a new user Jenkins is ready to use it
+   ![](./images/2.2.i020.png)
+
+9. Customize Jenkins clicking on "Install suggested plugins"
+
+   Right after create a new user you must to install the Jenkins plugins
 ![](./images/2.2.i017.png)
 ![](./images/2.2.i018.png)
 
 10. Install maven plugins
-![](./images/2.2.i022.png)
-![](./images/2.2.i023.png)
+   
+      To create our build we will need install the maven plugins. Browse to Manage Jenkins-> Manage Plugins
+   ![](./images/2.2.i022.png)
+
+     ![](./images/2.2.i023.png)
 
 11. Create a new Item and select an FreeStyle Project
 ![](./images/2.2.i024.png)
-![](./images/2.2.i025.png)
 
-12. Fill all the form and save it
+      ![](./images/2.2.i025.png)
+
+12. Provide all the information and clicking on "Save"
 ![](./images/2.2.i026.PNG)
 ![](./images/2.2.i027.PNG)
 ![](./images/2.2.i028.PNG)
@@ -77,21 +96,21 @@ Now we can fill the Administratior password and continue to the next step.
 
 13. Maven Configuration
 
-Go to the main page and select Manage Jenkins as is showing below.
+      Go to the main page and select Manage Jenkins as is showing below.
 ![](./images/2.2.i031.PNG)
 
-Select Global Tool Configuration and create a Maven installation.
+    Select Global Tool Configuration and create a Maven installation.
 
-![](./images/2.2.i032.PNG)
+    ![](./images/2.2.i032.PNG)
 
-![](./images/2.2.i033.PNG)
+    ![](./images/2.2.i033.PNG)
 
-![](./images/2.2.i034.PNG)
+    ![](./images/2.2.i034.PNG)
 
-After maven installation you should configure the Maven Option Variables.
-Go to Configure System and Select Maven Project Configuration.
+    After maven installation you should configure the Maven Option Variables.
+    Browse to Configure System and Select Maven Project Configuration.
 
-![](./images/2.2.i035.PNG)
+     ![](./images/2.2.i035.PNG)
 
-![](./images/2.2.i036.PNG)
+    ![](./images/2.2.i036.PNG)
 

@@ -160,3 +160,12 @@ We will now configure the release tasks for the Staging environment of our relea
 
 4. Click on the "Logs" tab of the release to see the details of your deployment and verify that the release was successful.
     ![](./images/5.6.i004.PNG)
+
+5. Browse to your webapp deployed in the release. 
+
+    **You should use the machine's Hostname created in Lab 4**
+
+    **You should make sure to open the port(Check Lab 4, section 4.2, steps 2 and 3) defined in section 5.5 step 5 in this lab** 
+
+    **You should make sure to use the port defined in section 5.5 step 5 in this Lab**
+    ![](./images/5.6.i005.PNG)
