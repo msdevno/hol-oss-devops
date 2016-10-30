@@ -1,7 +1,7 @@
 # hol-oss-devops
 This set of hands on labs is created to give you an introduction to open source DevOps using Visual Studio Team Services and the open source cloud services in Azure. We appreciate your feedback and support in continuing to develop this content.
 
-This lab showcases the following technologies: Microsoft Azure, Visual Studio Team Services, Java, Maven, Jenkins, Linux, Docker, TomCat, Eclipse. 
+This lab showcases the following technologies: Microsoft Azure, Visual Studio Team Services, Java, Maven, Jenkins, Linux, Docker, TomCat. 
 
 
 ### **Suggested timeline for Open Source DevOps Hands On Lab (HOL)**
