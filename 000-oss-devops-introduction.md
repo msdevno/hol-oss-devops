@@ -3,7 +3,7 @@
 This Hands-on-lab is an example of continuous build and deployment of containerized Java Web applications using Linux, Docker, 
 Jenkins, VSTS and Maven on Azure.
 
- ![](./images/0.0.i001.png)
+ ![](./images/0.0.i001.PNG)
 
 Today everyone is looking for try/learn/automate/experiment in the simplest way possible how to deploy in a cloud architecture; this is a classic DevOps scenario and here you will find an intent to show a Devops lifecycle from scratch.
 
@@ -34,7 +34,7 @@ Follow all the HOL labs.
 
 As expected result you will get the communication's flow depicted below
 
-![](./images/0.0.i002.png)
+![](./images/0.0.i002.PNG)
 
 1. Using for example Eclipse IDE a developer creates/updates a Java Web Application
 2. VSTS detects a commit on GitHub repository and triggering a new build
