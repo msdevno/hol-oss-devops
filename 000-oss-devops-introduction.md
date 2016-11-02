@@ -32,7 +32,7 @@ Follow all the HOL labs.
 
 ## Result
 
-As expected result you will get the communication's flow depicted below
+As expected result you will get the workflow depicted below
 
 ![](./images/0.0.i002.PNG)
 
