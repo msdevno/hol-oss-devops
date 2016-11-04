@@ -10,7 +10,7 @@ This lab showcases the following technologies: Microsoft Azure, Visual Studio Te
 | ---        | ---      |
 | 30         | Introduction to open source DevOps |
 | 30         | Lab1 - [Before you begin this lab](./001-lab-setup.md) |
-| 30         | Lab2 - [Creating and configuring a Jenkins server in Azure](./002-jenkins-setup.md) |
+| 60         | Lab2 - [Creating and configuring a Jenkins server in Azure](./002-jenkins-setup.md) |
 | 30         | Lab3 - [Setting up an automated build in Visual Studio Team Services](./003-vsts-build.md) |
 | 30         | Lab4 - [Configuring Docker](./004-docker-setup.md) |
 | 30         | Lab5 - [Release management in Visual Studio Team Services](./005-vsts-release.md) |
