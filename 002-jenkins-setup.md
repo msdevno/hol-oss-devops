@@ -1,4 +1,4 @@
-# 2. Setting up Jenkins Job
+# 2. Creating and configuring a Jenkins server in Azure
 
 ## 2.1 Overview
 In this lab, we will use Jenkins to create a build using maven to use it in our HOL-OSS-DEVOPS project.
@@ -100,43 +100,80 @@ You must have the Azure account mentioned in Lab 01.
 16. Once you have created a new user, Jenkins is ready! Click "Start using Jenkins" to proceed.
    ![](./images/2.3.i013.png)
 
-## 2.3 Configuring a Maven build in Jenkins
+## 2.4 Configuring a Maven build in Jenkins
 
-1. Install maven plugins
+### 2.4.1 Install maven plugins
    
-      To create our build we will need install the maven plugins. Browse to Manage Jenkins-> Manage Plugins
-   ![](./images/2.2.i022.png)
+1. To create our build we will need install the maven plugins. Browse to Manage Jenkins-> Manage Plugins
+   ![](./images/2.4.i001.png)
 
-     ![](./images/2.2.i023.png)
+2. Select the "Available" tab to view all available plugins and mark the "Maven Integration Plugin" for download. Click "Install without restart" to install the plugin.
+     ![](./images/2.4.i002.png)
 
-2. Create a new Item and select an FreeStyle Project
-![](./images/2.2.i024.png)
 
-      ![](./images/2.2.i025.png)
+### 2.4.2 Maven Configuration
 
-3. Provide all the information and clicking on "Save"
-![](./images/2.2.i026.PNG)
-![](./images/2.2.i027.PNG)
-![](./images/2.2.i028.PNG)
-![](./images/2.2.i029.PNG)
-![](./images/2.2.i030.PNG)
+1. Go to the Jenkins Dashboard and select "Manage Jenkins"
+![](./images/2.4.i003.PNG)
 
-4. Maven Configuration
+2. Click on "Global Tool Configuration"
+    ![](./images/2.4.i004.PNG)
 
-      Go to the main page and select Manage Jenkins as is showing below.
-![](./images/2.2.i031.PNG)
+3. Scroll down to the "Maven" section and click on the "Add Maven" button.
+    ![](./images/2.4.i005.PNG)
 
-    Select Global Tool Configuration and create a Maven installation.
+4. Specify the name "maven" and ensure that the "Install automatically" checkbox is marked.
+    ![](./images/2.4.i006.PNG)
 
-    ![](./images/2.2.i032.PNG)
+5. Click "Save".
 
-    ![](./images/2.2.i033.PNG)
+6.  After configuring the Maven installation you need to configure the Maven Option Variables. Click on "Configure System".
+     ![](./images/2.4.i007.PNG)
 
-    ![](./images/2.2.i034.PNG)
+7. Scroll down to the "Maven Project Configuration" section and click the arrow to the right of the textbox to expand to multiple lines.
+    ![](./images/2.4.i008.PNG)
 
-    After maven installation you should configure the Maven Option Variables.
-    Browse to Configure System and Select Maven Project Configuration.
+8. Specify the following values for "Global MAVEN_OPTS":
+    ```
+      -Xmx512m
+      -XX:MaxPermSize=128m
+      -Pupstream
+    ``` 
+    ![](./images/2.4.i009.PNG)
 
-     ![](./images/2.2.i035.PNG)
+9. Click "Save".
 
-    ![](./images/2.2.i036.PNG)
+### 2.4.3 Create a Maven build
+1. Go back to the Jenkins Dashboard and click on "New Item".
+      ![](./images/2.4.i010.PNG)
+
+2. Create a "Freestyle project" with the name "MavenBuid" and click "OK" to continue.
+      ![](./images/2.4.i011.png)
+
+3. Click on the "Build" tab of the configuration. In the "Add build step" dropdown, select "Invoke top-level Maven targets".
+      ![](./images/2.4.i012.png)
+
+4. Click on the arrow next to the "Goals" textbox to expand the textbox to multiple lines. 
+ ![](./images/2.4.i013.png)
+
+5. Select the "Maven Version" we set up previously and specify the following goals for the build and click on the "Advanced..." button:
+    ```
+    clean
+    package
+    ``` 
+      ![](./images/2.4.i014.png)
+
+6. Add the following "POM" file path to the configuration:
+    ```
+    sample-app/pom.xml
+    ``` 
+    ![](./images/2.4.i015.png)
+
+7. Click on the "Post-build Actions" tab and add a post-build action of type "Archive the artifact" where you archive the files matching the following pattern:
+      ```
+    **/target/*.war
+    ``` 
+    ![](./images/2.4.i016.PNG)
+
+8. Click on "Save".
+

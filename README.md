@@ -25,6 +25,12 @@ This lab showcases the following technologies: Microsoft Azure, Visual Studio Te
     * Overview
         * Objectives
         * Requirements
+    * Creating a VM in Azure running Jenkins
+    * Unlock Jenkins
+    * Configuring a Maven build in Jenkins
+        * Install maven plugins
+        * Maven Configuration
+        * Create a Maven build
 
 3. [Setting up an automated build in Visual Studio Team Services](./003-vsts-build.md)  
     * Overview
