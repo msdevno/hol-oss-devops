@@ -6,14 +6,14 @@ In this lab, we will use Jenkins to create a build using maven to use it in our 
 ### 2.1.1 Objectives
 This lab aims to get you familiar with Jenkins on Azure Cloud.
 
-### 2.1.2 Requerimients
+### 2.1.2 Requirements
 You must have the Azure account mentioned in Lab 01.
 
 ## 2.2 Creating a VM in Azure running Jenkins
 
-1. Browse to Azure Portal
+1. Browse to the Azure Portal: https://portal.azure.com/
 
-   You can use all the Jenkins templates showed below; for this lab we will use Jenkis template published by Docker. This will setp up an Ubuntu VM with the Docker engine installed and a Jenkins container running on it. 
+   You can use any of the Jenkins templates showed below; for this lab we will use Jenkis template published by Docker. This will setp up an Ubuntu VM with the Docker engine installed and a Jenkins container running on it. 
    ![](./images/2.2.i001.png)
 
 2. Click Create to begin the creation of the VM. 

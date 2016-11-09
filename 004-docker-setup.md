@@ -3,77 +3,141 @@
 ## 4.1 Overview
 In this lab we will configure a Docker machine to use it in our HOL-DEVOPS project.
 
-### 4.1.1 Requerimients
-All the requerimients listed in Lab 1.
+### 4.1.1 Requirements
+You must have completed all previous labs.
 
 ## 4.2 Setting up the Linux Machine in Azure
 
-1. Browse to Azure Portal. For this lab we will use an Ubuntu template.
+1. Browse to the [Azure Portal](https://portal.azure.com/) and search for *ubuntu* in the Marketplace. 
+For this lab we will use the set up an Ubuntu Server:
 
-2. Create a new Linux Machine and specify all the details
-![](./images/4.2.i001.png)
+    ![](./images/4.2.i001.png)
 
-3. Select the machine size
-![](./images/4.2.i002.png)
+2. Click Create to begin the creation of the VM and fill in the basic machine settings:  
 
-3. Specify all the settings 
+    **Name:** OSSDevOpsHOLDocker  
+    **VM Disk Type:** HDD  
+    **Username:** ossdevopshol-user  
+    **Authentication type:** Password  
+    **Password:** Choose a password you will remember  
+    **Subscription:** Your Azure subscription  
+    **Resource group:** (Use existing) OSSDevOpsHOL  
+    **Location:** Your preferred location
+    ![](./images/4.2.i002.png)
+
+3. Select the "A1 Standard" virtual machine size. If you are unable to see this machine size, make sure you are viewing "All" machine sizes and not only those that are "Recommended" (you can toggle this view in the upper right corner of the machine size viewer). 
 ![](./images/4.2.i003.png)
 
-4. Validate the configuration selected
+3. In the third step you can select optional extensions to be installed, but we will simply leave this as-is and select OK to move to the next step.
 ![](./images/4.2.i004.png)
 
-6. Deploy your machine by clicking on "OK"
-![](./images/4.2.i005.PNG)
+4. Validate the configuration settings you've selected and click OK. 
+![](./images/4.2.i005.png)
 
-## 4.2 Setting up Docker
-
-1. Once your machine is deployed; Connect to the machine, for this Lab we will use Putty as is showing below
+6. The machine will now be deployed for you: 
 ![](./images/4.2.i006.PNG)
 
-2. User and Password are the same that you defined in the step 2 of this Lab
-![](./images/4.2.i008.PNG)
+## 4.3 Generating public and private RSA keys
 
-3. Create a CA private "$ openssl genrsa -aes256 -out ca-key.pem 4096"
-![](./images/4.2.i009a.PNG)
-![](./images/4.2.i009b.PNG)
+1. When the VM has been deployed, select the machine to open the overview window as shown below. 
+![](./images/4.3.i001.PNG)
 
-4. Create public keys "openssl req -new -x509 -days 365 -key ca-key.pem -sha256 -out ca.pem" **Do no forget specify your FQDN** 
-![](./images/4.2.i009c.PNG)
+2. Take note of the "Public IP address" of your machine, you will need this in the next step to access the machine.
 
-5. Create a server key "$ openssl genrsa -out server-key.pem 4096" 
-![](./images/4.2.i009d.PNG)
+3. Run PuTTY.exe and enter the public IP address from step 2 into the "Host name (or IP address) textbox" and click "Open" to connect to the machine. 
+![](./images/4.3.i002.PNG)
 
-6. Create a CSR "openssl req -subj "/CN=$HOST" -sha256 -new -key server-key.pem -out server.csr" **Do no forget specify your HOST** 
-![](./images/4.2.i009e.PNG)
+4. Specify the username and password that you defined earlier in this lab.
+![](./images/4.3.i003.PNG)
 
-7. Allow connections using IPs "$ echo subjectAltName = IP:10.10.10.20,IP:127.0.0.1 > extfile.cnf" **Make sure to use your own IPs**
-![](./images/4.2.i009f.PNG)
+5. Generate a private key by specifying the following command: 
+      ```
+      openssl genrsa -aes256 -out ca-key.pem 4096
+      ```
+    ![](./images/4.3.i004.PNG)
 
-8. Sign the public key "openssl x509 -req -days 365 -sha256 -in server.csr -CA ca.pem -CAkey ca-key.pem \ -CAcreateserial -out server-cert.pem -extfile extfile.cnf"
-![](./images/4.2.i009g.PNG)
+6. When prompted, supply a pass phrase for the private key:
+![](./images/4.3.i005.PNG)
 
-9. Create a client key "openssl genrsa -out key.pem 4096"
-![](./images/4.2.i009h.PNG)
+7. Create public keys by running the following command:  
+      ```
+    openssl req -new -x509 -days 365 -key ca-key.pem -sha256 -out ca.pem
+      ```
+    Fill in your contact information when prompted. Specify *OSSDevOpsHOL* as the Common Name.
+    ![](./images/4.3.i006.PNG)
 
-10. Create a CSR "openssl req -subj '/CN=client' -new -key key.pem -out client.csr"
-![](./images/4.2.i009i.PNG)
+8. Create a server key by running the following command:  
+      ```
+    openssl genrsa -out server-key.pem 4096
+      ```
+    ![](./images/4.3.i007.PNG)
 
-11. Create an extensions config file "$ echo extendedKeyUsage = clientAuth > extfile.cnf"
-![](./images/4.2.i009j.PNG)
+9. Create a CSR file: 
+      ```
+    openssl req -subj "/CN=OSSDevOpsHOLDocker" -sha256 -new -key server-key.pem -out server.csr
+      ```
+    ![](./images/4.3.i008.PNG)
 
-12. Sign the public key "$ openssl x509 -req -days 365 -sha256 -in client.csr -CA ca.pem -CAkey ca-key.pem \ -CAcreateserial -out cert.pem -extfile extfile.cnf
-![](./images/4.2.i009k.PNG)
+10. Allow connections using the specified IP-addresses: 
+      ```
+    echo subjectAltName = IP:10.10.10.20,IP:127.0.0.1 > extfile.cnf
+      ```
+    ![](./images/4.3.i009.PNG)
 
-13. Create Docker Certificates. Use base64 or another encoding tool to create base64-encoded topics
+11. Sign the public key:
+      ```
+    openssl x509 -req -days 365 -sha256 -in server.csr -CA ca.pem -CAkey ca-key.pem \
+    -CAcreateserial -out server-cert.pem -extfile extfile.cnf
+      ```
+    ![](./images/4.3.i010.PNG)
 
-     ***~/.docker$ base64 ca.pem > ca64.pem***
+12. Create a client key
+      ```
+    openssl genrsa -out key.pem 4096
+      ```
+    ![](./images/4.3.i011.PNG)
 
-     ***~/.docker$ base64 server-cert.pem > server-cert64.pem***
+13. Create a client CSR 
+    ```
+    openssl req -subj '/CN=client' -new -key key.pem -out client.csr
+      ```
+    ![](./images/4.3.i012.PNG)
 
-     ***~/.docker$ base64 server-key.pem > server-key64.pem***
+14. Create an extensions config file 
+    ```
+    echo extendedKeyUsage = clientAuth > extfile.cnf
+      ```
+    ![](./images/4.3.i0013.PNG)
 
-13. At the end you should have all those keys listed below. **Store your keys, we will use it in step 17 in to this Lab**
-![](./images/4.2.i009m.PNG)
+15. Sign the public key
+    ```
+    openssl x509 -req -days 365 -sha256 -in client.csr -CA ca.pem -CAkey ca-key.pem \ 
+    -CAcreateserial -out cert.pem -extfile extfile.cnf
+      ```
+    ![](./images/4.3.i014.PNG)
+
+16. Create Docker Certificates. Use base64 or another encoding tool to create base64-encoded topics.
+    ```
+    base64 ca.pem > ca64.pem
+    base64 server-cert.pem > server-cert64.pem
+    base64 server-key.pem > server-key64.pem
+      ```
+
+17. Run the following command: 
+    ```
+    ls
+    ```
+    You should now have all the keys listed below.
+    ![](./images/4.3.i015.PNG)
+
+18. Store the contents of ca.pem, cert.pem and key.pem somewhere on your local machine by running the following commands and storing the keys. We will need these keys in Lab 05.
+    ```
+    less ca.pem
+    less cert.pem
+    less key.pem
+    ```
+
+## 4.4 Add a Docker extension
 
 14. Browse to Azure portal and open the Docker machine created in step 4.2 in this Lab.
 
