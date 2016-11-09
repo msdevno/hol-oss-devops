@@ -107,7 +107,7 @@ For this lab we will use the set up an Ubuntu Server:
     ```
     echo extendedKeyUsage = clientAuth > extfile.cnf
       ```
-    ![](./images/4.3.i0013.PNG)
+    ![](./images/4.3.i013.PNG)
 
 15. Sign the public key
     ```
