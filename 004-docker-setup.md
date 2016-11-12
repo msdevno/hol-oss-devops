@@ -32,7 +32,7 @@ For this lab we will use the set up an Ubuntu Server:
 ![](./images/4.2.i004.png)
 
 4. Validate the configuration settings you've selected and click OK. 
-![](./images/4.2.i005.png)
+![](./images/4.2.i005.PNG)
 
 6. The machine will now be deployed for you: 
 ![](./images/4.2.i006.PNG)
