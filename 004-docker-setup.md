@@ -130,28 +130,44 @@ For this lab we will use the set up an Ubuntu Server:
     You should now have all the keys listed below.
     ![](./images/4.3.i015.PNG)
 
-18. Store the contents of ca.pem, cert.pem and key.pem somewhere on your local machine by running the following commands and storing the keys. We will need these keys in Lab 05.
+18. If you don't already have the PSCP tool installed on your local machine, download it from the [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) download page.
+
+19. On your local machine, open Command Prompt and point to the location of the PSCP tool (in this case the tool is in the temp folder)
     ```
-    less ca.pem
-    less cert.pem
-    less key.pem
+    cd C:\temp
+    ```
+
+20. We will now use the pscp tool to download the certificate files from our docker machine to our local machine.    
+    Store the contents of the ca64.pem, server-cert64.pem, server-key64.pem, ca.pem, cert.pem and key.pem files somewhere on your local machine by running the following commands. We will need these keys in Lab 05.  
+    **Replace *host* with the IP address of your Docker machine**  
+    ```
+    pscp.exe ossdevopshol-user@host:ca64.pem C:\temp\ca64.pem
+    pscp.exe ossdevopshol-user@host:server-cert64.pem C:\temp\server-cert64.pem
+    pscp.exe ossdevopshol-user@host:server-key64.pem C:\temp\server-key64.pem
+    pscp.exe ossdevopshol-user@host:ca.pem C:\temp\ca.pem
+    pscp.exe ossdevopshol-user@host:cert.pem C:\temp\cert.pem
+    pscp.exe ossdevopshol-user@host:key.pem C:\temp\key.pem
     ```
 
 ## 4.4 Add a Docker extension
 
-14. Browse to Azure portal and open the Docker machine created in step 4.2 in this Lab.
+1. Browse to the [Azure Portal](https://portal.azure.com/) and open the Docker machine we created in section 4.2 of this Lab.
 
-15. Go to Extensions -> Add -> Select Docker extension
-![](./images/4.2.i011.PNG)
+2. Under "Settings", go to Extensions. Click the "Add" button to add a new extension and select the Docker extension created by Microsoft.
+![](./images/4.4.i001.PNG)
 
-16. Clicking on "Create" 
-![](./images/4.2.i012.PNG)
+3. Click on "Create" 
+![](./images/4.4.i002.PNG)
 
-17. Provide the key's location and click on "OK". **Check step 13 in this Lab**
-![](./images/4.2.i013.PNG)
+4. Specify the following settings.  
+    **Docker Engine Port:** 2376  
+    **TLS CA Certificate:** Point to the ca64.pem file in your C:\temp folder  
+    **TLS Server Certificate:** Point to the server-cert64.pem file in your C:\temp folder  
+    **TLS Server Key:** Point to the server-key64.pem file in your C:\temp folder 
+    ![](./images/4.4.i003.PNG)
 
-18. When the Docker extension deploy finish you will see the new Extension as is showing below
-![](./images/4.2.i014.PNG)
+5. When the Docker extension deployment is finished, you will see the new Extension as shown below.
+  ![](./images/4.4.i004.PNG)
 
 ## 4.3 Setting up Docker communication endpoint
 
