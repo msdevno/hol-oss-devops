@@ -169,26 +169,42 @@ For this lab we will use the set up an Ubuntu Server:
 5. When the Docker extension deployment is finished, you will see the new Extension as shown below.
   ![](./images/4.4.i004.PNG)
 
-## 4.3 Setting up Docker communication endpoint
+## 4.5 Setting up a Docker communication endpoint
 
-1. Browse to Azure portal and open the Docker machine created in step 4.2 in this Lab.
-2. Go to Network interfaces -> Network security group -> Inbound security rules -> Add
-Fill all the fields
-![](./images/4.2.i015.PNG)
+1. Under "Settings", go to "Network interfaces".
 
-3. When the rule has been deployed you will see it as is showing below
-![](./images/4.2.i016.PNG)
+2. In the list, you will see one "Network interface". Click on it. 
 
-4. Verify the Docker environment variables
+3. Under "Settings", click on "Network security group" and select the only instance in the list:
+  ![](./images/4.5.i001.PNG)
 
-   **export DOCKER_HOST=tcp://yourhost:2376**
+4. Go to "Inbound security rules" and click "Add" to add a new rule that allows TCP connections on port 2376. Specify the following settings.  
+    **Name:** Docker  
+    **Priority:** 1010    
+    **Source:** Any    
+    **Service:** Custom
+    **Protocol:** TCP  
+    **Port rage:** 2376  
+    **Action:** Allow
+  ![](./images/4.5.i002.PNG)
 
-   **export DOCKER_TLS_VERIFY=1**
+5. Click OK. When the rule has been deployed, you will see it as shown below.
+![](./images/4.5.i003.PNG)
 
-   **export DOCKER_CERT_PATH=/yourpath/.docker/**
+4. Use PuTTY to connect to your Docker machine and verify the Docker environment variables by running the commands below.    
+  **Replace *host* with the IP address of your Docker machine**  
+    ```
+    export DOCKER_HOST=tcp://host:2376
+    export DOCKER_TLS_VERIFY=1
+    export DOCKER_CERT_PATH=/home/ossdevopshol-user/
+    ```
 
-5. Verifying the connection
-![](./images/4.2.i018.PNG)
+5. Verify the connection by running the following command.  
+  **Replace *host* with the IP address of your Docker machine** 
+    ```
+    docker --tls -H tcp://host:2376 info
+    ```
+    ![](./images/4.5.i004.PNG)
 
 ## 4.5 Install .NET Core SDK for Linux
 
@@ -199,23 +215,23 @@ In order to run the VSTS Agent we need to make sure that .NET Core is installed 
    **sudo sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet-release/ trusty main" > /etc/apt/sources.list.d/dotnetdev.list'**
 
    **sudo apt-key adv --keyserver apt-mo.trafficmanager.net --recv-keys 417A0893**
-![](./images/4.5.i004.PNG)
+![](./images/4.5.i004a.PNG)
 
    **sudo apt-get update**
-![](./images/4.5.i005.PNG)
+![](./images/4.5.i005a.PNG)
 
 2. Install .NET Core SDK
 
    **sudo apt-get install dotnet-dev-1.0.0-preview2-003131**
-   ![](./images/4.5.i006.PNG)
+   ![](./images/4.5.i006a.PNG)
 
 
 ## 4.6 Install VSTS Linux Agent
 1. Browse to VSTS-> Agent queues -> Download agent
-![](./images/4.5.i001.PNG)
+![](./images/4.5.i001a.PNG)
 
 2. Browse to Get agent -> Linux -> your OS. For this Lab we will use **Ubuntu14.04-x64**
-![](./images/4.5.i002.PNG)
+![](./images/4.5.i002a.PNG)
 
 3. Dowload the agent and transfer to your Linux machine
 
@@ -226,7 +242,7 @@ In order to run the VSTS Agent we need to make sure that .NET Core is installed 
    ***$ cd myagent***
 
    ***$ tar zxvf /home/jessica/vsts-agent-ubuntu.14.04-x64-2.108.0.tar.gz***
-    ![](./images/4.5.i003.PNG)
+    ![](./images/4.5.i003a.PNG)
 
 5. Configure the agent.
    
@@ -236,15 +252,15 @@ In order to run the VSTS Agent we need to make sure that .NET Core is installed 
 
    **Authentication type: Choose PAT, and then paste the PAT token you created in Lab1.**
 
-    ![](./images/4.5.i007.PNG) 
+    ![](./images/4.5.i007a.PNG) 
 
    **Enter the agent pool(press Enter for default) > "your agent pool"**
 
    **Enter the agent name(press Enter for "your host name") > "your agent name"**
-    ![](./images/4.5.i009.PNG)
+    ![](./images/4.5.i009a.PNG)
 
 ## 4.6 Create a directory for warfiles
 
 During the release (**see Lab5**)  you will uploaded the war file to a directory in the Docker machine. In this section we just create a directory and named warfiles as is showing below.
 
-![](./images/4.5.i010.PNG)
+![](./images/4.5.i010a.PNG)
