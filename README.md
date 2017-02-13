@@ -55,8 +55,8 @@ This lab showcases the following technologies: Microsoft Azure, Visual Studio Te
     * Overview
         * Objectives
         * Requirements
+    * Installing the VSTS Docker extension
     * Connecting VSTS to Docker Hub and a Docker Host
     * Creating a Release Definition in VSTS
-    * Installing the VSTS Docker extension
     * Configure release tasks
     * Create your first release

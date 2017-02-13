@@ -5,7 +5,14 @@ In this lab, we will configure release management for our sample application. We
 ### 5.1.2 Requirements
 You must have completed all previous labs.
 
-## 5.2. Connecting VSTS to Docker Hub and a Docker Host
+## 5.2 Installing the VSTS Docker extension
+
+1. Browse to the [Docker Integration](https://marketplace.visualstudio.com/items?itemName=ms-vscs-rm.docker) extension on the Visual Studio marketplace.
+![](./images/5.4.i001.PNG)
+
+2. Install the extension by clicking "Install" and selecting the account you want to install the extension for. 
+
+## 5.3. Connecting VSTS to Docker Hub and a Docker Host
 
 1. Register for a Docker ID by creating an account on Docker Hub as explained [in the Docker documentation](https://docs.docker.com/docker-hub/accounts/).
 
@@ -44,7 +51,7 @@ You must have completed all previous labs.
 6. You should now see the service endpoint you just created in the overview:
 ![](./images/5.2.i007.PNG)  
 
-## 5.3 Creating a Release Definition in VSTS
+## 5.4 Creating a Release Definition in VSTS
 
 We will now create a new *Release Definition* that contains all the steps to be executed when we deploy a release. We will enable [*Continous Deployment*](https://en.wikipedia.org/wiki/Continuous_delivery) so that a new release is created every time a build is successful.
 
@@ -75,13 +82,6 @@ We will now create a new *Release Definition* that contains all the steps to be 
 
 7. Save your release definition and click "OK".
 ![](./images/5.3.i007.PNG)
-
-## 5.4 Installing the VSTS Docker extension
-
-1. Browse to the [Docker Integration](https://marketplace.visualstudio.com/items?itemName=ms-vscs-rm.docker) extension on the Visual Studio marketplace.
-![](./images/5.4.i001.PNG)
-
-2. Install the extension by clicking "Install" and selecting the account you want to install the extension for. 
 
 ## 5.5 Configure release tasks
 
